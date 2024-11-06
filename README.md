@@ -9,7 +9,7 @@ The National Institute on Aging Genetics of Alzheimer's Disease Data Storage Sit
 
 ## NIAGADS Open Access API
 
-The [NIAGADS Open Access API](https://api.niagads.org) provides programmatic access to the Open Access resources.  
+The [NIAGADS Open Access API](https://api.niagads.org) provides programmatic access to the Open Access resources.  Follow the provided link to browse the API documentation and OpenAPI specification.
 
 * offers both data and visualization endpoints
 
@@ -31,11 +31,9 @@ The [NIAGADS Open Access API](https://api.niagads.org) provides programmatic acc
   * `ids`: a list of record ids matching the search criteria
   * `count`: a count of the number of matchin results; maybe total number of records or in the case of bulk data queries, the number of data points per each matching data track
   
+### Example Usage
 
-
-### Usage examples coming soon
-
-> we apologize for the inconvenience.  Please check back for updates.
+> More in-depth usage examples coming soon; we apologize for the delay.  Please check back for updates.
 
 *  Endpoints for accessing data in [FILER](https://tf.lisanwanglab.org/FILER/) are now available in beta.  Some FILER queries can return very large response sizes, especially requests to access data (e.g., `/filer/data` routes).  We recommend command-line based request for best performance if you want a JSON response.  For example:
 
