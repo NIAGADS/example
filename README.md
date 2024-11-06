@@ -37,10 +37,28 @@ The [NIAGADS Open Access API](https://api.niagads.org) provides programmatic acc
 
 > we apologize for the inconvenience.  Please check back for updates.
 
-*  Endpoints for accessing data in [FILER](https://tf.lisanwanglab.org/FILER/) are now available in beta.  Some FILER queries can return very large response sizes, especially requests to access data (e.g., `/filer/data` routes).  We recommend command-line based request for best performance.  For example:
+*  Endpoints for accessing data in [FILER](https://tf.lisanwanglab.org/FILER/) are now available in beta.  Some FILER queries can return very large response sizes, especially requests to access data (e.g., `/filer/data` routes).  We recommend command-line based request for best performance if you want a JSON response.  For example:
 
-
+> Find all data points on `QTL` tracks in `brain` tissue, in the span of the gene `ABCA7` (coming soon - ability to use gene symbols and variant ids as locus).  Return a `full` response (all the the data points):
 
 ```bash
-curl -X 'GET' '<REQUEST>'  -H 'accept: application/json'
+curl -X 'GET' 'https://api.niagads.org/filer/data/search?keyword=QTL&loc=chr19%3A1038997-1066572&filter=biosample+eq+brain&content=full&format=json' -H 'accept: application/json'
 ```
+
+> In a browser window, do the same, but view the results in an interactive table:
+
+<https://api.niagads.org/filer/data/search?keyword=QTL&loc=chr19%3A1038997-1066572&filter=biosample+eq+brain&content=full&format=table>
+
+* from the table, you can sort, filter (column filters coming soon), and export the table data in various formats
+
+> For more in-depth, real-time analysis, choose to return the content as a `summary` (`content=summary`):
+
+<https://api.niagads.org/filer/data/search?keyword=QTL&loc=chr19%3A1038997-1066572&filter=biosample+eq+brain&content=summary&format=table>
+
+* you can also get this response in `JSON` by setting `format=json`.  From the command line, you could run:
+
+```bash
+curl -X 'GET' 'https://api.niagads.org/filer/data/search?keyword=QTL&loc=chr19%3A1038997-1066572&filter=biosample+eq+brain&content=summary&format=json' -H 'accept: application/json'
+```
+
+* summary tables allow users to select rows and view just the data on the selected track(s), either in a table or in a Genome Browser view.
