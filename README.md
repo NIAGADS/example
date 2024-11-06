@@ -13,6 +13,8 @@ The [NIAGADS Open Access API](https://api.niagads.org) provides programmatic acc
 
 * offers both data and visualization endpoints
 
+> NOTE: **The API is still under development.**
+
 ### Visualization Endpoints
 
 * Add `format=table` when making requests through a web-browser to display most response in an interactive table
@@ -29,7 +31,7 @@ The [NIAGADS Open Access API](https://api.niagads.org) provides programmatic acc
   * `ids`: a list of record ids matching the search criteria
   * `count`: a count of the number of matchin results; maybe total number of records or in the case of bulk data queries, the number of data points per each matching data track
   
-> NOTE: **The API is still under development.**
+
 
 ### Usage examples coming soon
 
